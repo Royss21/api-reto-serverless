@@ -6,19 +6,8 @@ import {
 } from './adapters/spanish';
 import { peopleAdapterPortugues } from './adapters/portugues';
 import { NotFoundException } from '@nestjs/common';
+import { languageAdapter } from './adapters/language.adapter';
 
-const languageAdapter = {
-  people: {
-    es: peopleAdapterSpanish,
-    bz: peopleAdapterPortugues,
-  },
-  planets: {
-    es: planetAdapterSpanish,
-  },
-  swapiResponse: {
-    es: swapiResponseAdapterSpanish,
-  },
-};
 
 export const translatePropsToLanguage = (
   data: ISwapiResponse<any>,
