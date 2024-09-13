@@ -7,7 +7,7 @@
 
 
 ### Arquitectura de la aplicacion
-  - Hexagonal
+  - Modular
 
 ## Description
 
@@ -52,3 +52,24 @@ Para instalar las dependencias del proyecto, sigue estos pasos:
     ```bash
     $ npm run sls:deploy
     ```
+
+## Checklist 
+- [x] Implementación de una API en Node.js utilizando el framework Serverless para su despliegue en AWS.
+- [x] Adaptación y transformación de los modelos de la API de SWAPI a español
+- [x] Diseño y creación de un modelo personalizado a través de endpoints para la insercion y lectura de la base de datos.
+- [x] Uso de un framework (NestJs)
+
+## Puntos
+- [x] Mínimo 2 endpoints
+- [x] Integración con Mysql
+- [x] Integración con SWAPI
+- [x] Traducción de atributos de inglés a español
+- [x] Uso de Serverless Framework
+- [x] Uso de Node.js
+- [x] Respeto de las buenas prácticas de desarrollo
+
+## Bonus
+- [ ] Pruebas Unitarias
+- [x] Uso de TypeScript
+- [ ] Deploy sin errores
+- [ ] Trabajar en capas y por dominio
