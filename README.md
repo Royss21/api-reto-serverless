@@ -5,52 +5,50 @@
 [circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
 [circleci-url]: https://circleci.com/gh/nestjs/nest
 
+
+### Arquitectura de la aplicacion
+  - Hexagonal
+
 ## Description
 
-Api de prueba tecnica softtek, el cual realiza un crud de empleados y consume el servicio de swapi
+Api de prueba tecnica softtek, el cual realiza un crud de empleados y consume el servicio de swapi.
 
-## Installation
+Antes de comenzar, asegúrate de tener lo siguiente:
+- Node.js versión 18 o superior instalado en tu sistema.
+- NPM (Node Package Manager) instalado en tu sistema.
 
-```bash
-$ npm install
-```
-
-## Running the app
-
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+### Instalaciones y Ejecucion del Proyecto
+Para instalar las dependencias del proyecto, sigue estos pasos:
+1. Abre una terminal.
+2. Navega hasta el directorio raíz del proyecto.
+3. Ejecuta el siguiente comando para instalar las bibliotecas necesarias:
+    ```bash
+    $ npm install
+    ```
+4. Configurar las variables de entorno en el archivo .env
+   ```bash
+    #local / dev / qa / prod
+    STAGE=entorno_de_aplicacion
+    APP_VERSION=version_de_aplicacion
+    PORT=puerto_de_aplicacion
+    DB_HOST=host_servidor_mysql
+    DB_PORT=puerto_servidor_mysql
+    DB_USER=usuario_servidor_mysql
+    DB_PASSWORD=password_servidor_mysql
+    DB_NAME=nombre_base_datos_mysql
+    DB_SYNCHRONIZE=sincronizar_entidades_mysql
+    API_URL_SWAPI=url_api_servicio_swapi
+   ```
+5. Iniciar el Proyecto en Desarrollo
+ - Para ejecutar el proyecto en modo de desarrollo, sigue estos pasos:
+    ```bash
+    $ npm run dev
+    ```
+    
+## Deploy en aws
+ - Asegurate de tener configurado tu aws settings
+ - Ejecutar cualquiera de los siguientes comandos
+ - Para realizar el despliegue en lambda con serverless
+    ```bash
+    $ npm run sls:deploy
+    ```
