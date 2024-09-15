@@ -74,7 +74,7 @@
     "IndexLogGroup": {
       "Type": "AWS::Logs::LogGroup",
       "Properties": {
-        "LogGroupName": "/aws/lambda/dev-serverless"
+        "LogGroupName": "/aws/lambda/reto-softtek-serverless"
       }
     },
     "IamRoleLambdaExecution": {
@@ -120,7 +120,7 @@
                   ],
                   "Resource": [
                     {
-                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/dev-serverless:*"
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/reto-softtek-serverless:*"
                     }
                   ]
                 },
@@ -131,7 +131,7 @@
                   ],
                   "Resource": [
                     {
-                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/dev-serverless:*:*"
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/reto-softtek-serverless:*:*"
                     }
                   ]
                 }
@@ -162,11 +162,11 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/serverless-nestjs/dev/1726248609807-2024-09-13T17:30:09.807Z/serverless-nestjs.zip"
+          "S3Key": "serverless/serverless-nestjs/dev/1726436127573-2024-09-15T21:35:27.573Z/serverless-nestjs.zip"
         },
         "Handler": "dist/index.handler",
         "Runtime": "nodejs18.x",
-        "FunctionName": "dev-serverless",
+        "FunctionName": "reto-softtek-serverless",
         "MemorySize": 1024,
         "Timeout": 6,
         "Environment": {
@@ -176,6 +176,12 @@
             "STAGE": "prod",
             "APP_VERSION": "1.0.0",
             "PORT": "3000",
+            "DB_HOST": "${DB_HOST}",
+            "DB_PORT": "${DB_PORT}",
+            "DB_USER": "${DB_USER}",
+            "DB_PASSWORD": "${DB_PASSWORD}",
+            "DB_NAME": "${DB_NAME}",
+            "DB_SYNCHRONIZE": "${DB_SYNCHRONIZE}",
             "API_URL_SWAPI": "https://swapi.py4e.com/api"
           }
         },
@@ -190,14 +196,14 @@
         "IndexLogGroup"
       ]
     },
-    "IndexLambdaVersionuS3fjpJxBW5uYJ9uDacXOA2j8IxfS6mG6brvuhU8a4": {
+    "IndexLambdaVersionZFG5qpP8YbcxxXkWteV0AJtliisesUCU48xnVsd4wY": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "IndexLambdaFunction"
         },
-        "CodeSha256": "ovshufsWF7xbnIgJM8l4zfZ0zaxCoo5mDFKh+EyUGa4="
+        "CodeSha256": "yDVJIDFCqrdlYnYKqAQyFj4nqZ+SMMD7QMdRYg/Pfr0="
       }
     },
     "ApiGatewayRestApi": {
@@ -646,7 +652,7 @@
         "IndexLambdaPermissionApiGateway"
       ]
     },
-    "ApiGatewayDeployment1726248604722": {
+    "ApiGatewayDeployment1726436125117": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -715,7 +721,7 @@
     "IndexLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "IndexLambdaVersionuS3fjpJxBW5uYJ9uDacXOA2j8IxfS6mG6brvuhU8a4"
+        "Ref": "IndexLambdaVersionZFG5qpP8YbcxxXkWteV0AJtliisesUCU48xnVsd4wY"
       },
       "Export": {
         "Name": "sls-serverless-nestjs-dev-IndexLambdaFunctionQualifiedArn"

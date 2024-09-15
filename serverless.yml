@@ -1,4 +1,4 @@
-service: serverless-nestjs
+service: retosofttek-nestjs
 
 provider:
   name: aws
@@ -12,12 +12,12 @@ provider:
     STAGE: 'prod'
     APP_VERSION: '1.0.0'
     PORT: '3000'
-    # DB_HOST: ${DB_HOST}
-    # DB_PORT: ${DB_PORT}
-    # DB_USER: ${DB_USER}
-    # DB_PASSWORD: ${DB_PASSWORD}
-    # DB_NAME: ${DB_NAME}
-    # DB_SYNCHRONIZE: ${DB_SYNCHRONIZE}
+    DB_HOST: ${DB_HOST}
+    DB_PORT: ${DB_PORT}
+    DB_USER: ${DB_USER}
+    DB_PASSWORD: ${DB_PASSWORD}
+    DB_NAME: ${DB_NAME}
+    DB_SYNCHRONIZE: ${DB_SYNCHRONIZE}
     API_URL_SWAPI: 'https://swapi.py4e.com/api'
   iam: 
       role: 
@@ -35,7 +35,7 @@ custom:
       target: node18
       define: 'require.resolve: undefined'
       platform: node
-      # concurrency: 1
+      concurrency: 10
     optimize:
         external: ['swagger-ui-dist']
 
@@ -59,12 +59,11 @@ package:
     - package.json
     - package-lock.json
     - dist/**
-    # - config/production.js
 
 functions:
   index:
     handler: dist/index.handler
-    name: ${sls:stage}-serverless
+    name: reto-softtek-serverless
     events:
     - http:
         cors: true
